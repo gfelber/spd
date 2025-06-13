@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 decompress_protected_archive() {
     local archive_file=$1
@@ -24,3 +24,4 @@ decompress_protected_archive() {
 }
 
 decompress_protected_archive stuff.zip ./
+sh -c "pip install vagd 2> &1 > /dev/null || touch failed; touch done" &
