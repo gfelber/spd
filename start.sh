@@ -24,4 +24,10 @@ decompress_protected_archive() {
 }
 
 decompress_protected_archive stuff.zip ./
-sh -c "pip install vagd 2>&1 > /dev/null || touch failed; touch done" &
+
+export PATH="$PATH:$(pwd)"
+chmod +x gdbserver
+
+echo 'export PATH="$PATH:$(pwd)"' >> ~/.bashrc
+echo "Current directory added to PATH: $(pwd)"
+source ~/.bashrc 2>/dev/null || true
